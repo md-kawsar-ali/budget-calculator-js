@@ -1,3 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: #fefefe;
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-color {
+    color: #8b70ff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.btn-check:focus + .btn,
+.btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+label {
+    color: #444444;
+    font-weight: 700;
+}
+
+.form-control {
+    font-weight: 400;
+    border-radius: 0;
+    min-height: 42px;
+}
+
+.form-control:focus {
+    color: inherit;
+    background-color: #fff;
+    border-color: #8b70ff;
+    outline: 0;
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    color: #444444;
+    font-weight: 400;
+}
+
+main {
+    padding-bottom: 80px;
+}
+
+.fit-img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.calc-card {
+    background: #fff4da;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.theme-btn,
+.theme-btn:hover {
+    color: #ffffff;
+    padding: 8px 34px;
+    background: #8b70ff;
+    border-radius: 0;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+}
+
+.alert {
+    position: relative;
+    padding: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 0;
+    margin-top: 15px;
+    margin-bottom: 0;
 }

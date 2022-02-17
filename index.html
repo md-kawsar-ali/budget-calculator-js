@@ -17,12 +17,97 @@
 <body>
     <header class="py-5">
         <div class="container">
-            <h1 class="text-center fs-1 fw-bold text-dark">Budget Calculator</h1>
+            <h1 class="text-center fs-1 fw-bold text-color">Budget Calculator</h1>
         </div>
     </header>
 
     <main class="container">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <img src="img/01.jpg" class="img-fluid fit-img" alt="">
+            </div>
 
+            <div class="col-lg-6">
+                <div class="calc-card">
+                    <!-- ===== Income Input ===== -->
+                    <h4 class="fw-bold mb-0">Income</h4>
+                    <div class="row mb-2">
+                        <label for="income" class="col-sm-2 col-form-label">Income:</label>
+                        <div class="col-sm-12">
+                            <input type="number" class="form-control" id="income" placeholder="Enter Your Amount">
+
+                            <div id="income-err" class="alert alert-danger" style="display: none;" role="alert">
+                                Enter Valid Income Amount!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Expenses Input ===== -->
+                    <h4 class="fw-bold mb-0 mt-4">Expenses</h4>
+                    <div class="row mb-2">
+                        <label for="food" class="col-sm-2 col-form-label">Food:</label>
+                        <div class="col-sm-12">
+                            <input type="number" class="form-control" id="food" placeholder="Enter Your Amount">
+
+                            <div id="food-err" class="alert alert-danger" style="display: none;" role="alert">
+                                Enter Valid Food Expense!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label for="rent" class="col-sm-2 col-form-label">Rent:</label>
+                        <div class="col-sm-12">
+                            <input type="number" class="form-control" id="rent" placeholder="Enter Your Amount">
+
+                            <div id="rent-err" class="alert alert-danger" style="display: none;" role="alert">
+                                Enter Valid Rent Expense!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label for="clothes" class="col-sm-2 col-form-label">Clothes:</label>
+                        <div class="col-sm-12">
+                            <input type="number" class="form-control" id="clothes" placeholder="Enter Your Amount">
+
+                            <div id="cloth-err" class="alert alert-danger" style="display: none;" role="alert">
+                                Enter Valid Clothes Expense!
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" id="calculate" class="btn theme-btn">Calculate</button>
+
+                    <!-- ==== Total Expenses and Balance ==== -->
+                    <h5 class="mt-4">Total Expenses: <span id="total-expenses">00.00</span></h5>
+                    <h5 class="mt-2">Balance: <span id="balance">00.00</span></h5>
+
+                    <!-- ==== Saving Calculation ==== -->
+                    <div class="row mt-4 mb-2 align-items-center">
+                        <label for="save" class="col-sm-2 col-form-label">Save:</label>
+                        <div class="col-4">
+                            <input type="number" value="20" class="form-control" id="save">
+                        </div>
+                        <div class="col">
+                            <h6>%</h6>
+                        </div>
+                        <div class="col-5">
+                            <button type="button" id="save-calculate" class="btn theme-btn mt-0 w-100">Saving</button>
+                        </div>
+
+                        <div class="col-12">
+                            <div id="saving-err" class="alert alert-danger" style="display: none;" role="alert">
+                                Something Went Wrong! Please, try again.
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4">Saving Amount: <span id="saving-amount">00.00</span></h5>
+                    <h5 class="mt-2 mb-0">Remaining Balance: <span id="remain-balance">00.00</span></h5>
+                </div>
+            </div>
+        </div>
     </main>
 
 
