@@ -28,14 +28,14 @@ const savingErr = getItem('saving-err');
 const calculateExpense = getItem('calculate');
 const calculateSaving = getItem('save-calculate');
 
-// Expenses Calculation
+// Handle Expenses Calculation
 calculateExpense.addEventListener('click', function () {
     const incomeAmount = parseFloat(incomeInput.value);
     const foodAmount = parseFloat(foodInput.value);
     const rentAmount = parseFloat(rentInput.value);
     const clothAmount = parseFloat(clothInput.value);
 
-    // Error Handling
+    // Invalid Input Error Handling
     if (incomeAmount <= 0 || isNaN(incomeAmount)) {
         incomeErr.style.display = 'block';
         return;
@@ -64,11 +64,11 @@ calculateExpense.addEventListener('click', function () {
         clothErr.style.display = 'none';
     }
 
-    // Total Expense
+    // Total Expense Calculation and Result Output
     const expensesResult = foodAmount + rentAmount + clothAmount;
     totalExpenses.innerText = expensesResult;
 
-    // Rest Balance
+    // Rest Balance and Output
     if (expensesResult <= incomeAmount) {
         const restBalance = incomeAmount - expensesResult;
         balance.innerText = restBalance;
@@ -79,7 +79,7 @@ calculateExpense.addEventListener('click', function () {
     }
 });
 
-// Saving Calculation
+// Handle Saving Calculation
 calculateSaving.addEventListener('click', function () {
     const currentBalance = balance.innerText;
     const incomeAmount = parseFloat(incomeInput.value);
@@ -96,22 +96,23 @@ calculateSaving.addEventListener('click', function () {
     }
 
     // Show Saving Amount Output
-    if (currentBalance >= savingResult) {
+    if (currentBalance >= savingResult && savingResult >= 0) {
         savingAmount.innerText = savingResult;
         savingErr.style.display = 'none';
     } else {
+        savingAmount.innerText = 00;
+        remainBalance.innerText = 00;
         savingErr.style.display = 'block';
         return;
     }
 
-
-    if (currentBalance <= 0 || isNaN(currentBalance)) {
-        savingErr.style.display = 'block';
-        return;
-    } else {
+    // Remaining Balance Calculation
+    if (currentBalance >= 0 || !isNaN(currentBalance) && savingResult >= 0) {
         const remainBalanceResult = currentBalance - savingResult;
         remainBalance.innerText = remainBalanceResult;
         savingErr.style.display = 'none';
+    } else {
+        remainBalance.innerText = 00;
+        savingErr.style.display = 'block';
     }
-
 });
