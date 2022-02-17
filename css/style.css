@@ -6,6 +6,7 @@
 }
 
 body {
+    color: #333333;
     background-color: #ffffff;
     font-family: 'Poppins', sans-serif;
 }
@@ -43,8 +44,9 @@ input[type='number'] {
 }
 
 label {
-    color: #444444;
+    color: #333333;
     font-weight: 700;
+    text-align: left;
 }
 
 .form-control {
@@ -67,7 +69,7 @@ label {
 }
 
 main {
-    padding-bottom: 80px;
+    padding-bottom: 4em;
 }
 
 .fit-img {
